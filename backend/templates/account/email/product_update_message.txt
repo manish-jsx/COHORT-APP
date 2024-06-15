@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWe want to keep you informed about recent updates to our platform:\n- **Bug fixes and performance enhancements:** We've squashed some bugs and made the platform faster.\n- **New module on advanced statistics:** Dive deeper into statistical concepts for data analysis.\n- **Updated user interface:**  We've refreshed the design for a more intuitive and enjoyable experience.
+{% endblocktrans %}

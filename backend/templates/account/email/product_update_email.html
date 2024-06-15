@@ -1,0 +1,18 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with user.first_name as first_name %}
+        Hi {{ first_name }},<br>
+        We want to keep you informed about recent updates to our platform:
+        <ul>
+            <li><b>Bug fixes and performance enhancements:</b> We've squashed some bugs and made the platform faster.</li>
+            <li><b>New module on advanced statistics:</b> Dive deeper into statistical concepts for data analysis.</li>
+            <li><b>Updated user interface:</b>  We've refreshed the design for a more intuitive and enjoyable experience.</li>
+        </ul>
+    {% endblocktrans %}</p>
+    
+{% endblock content %}

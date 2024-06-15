@@ -1,0 +1,17 @@
+{% extends "account/email/email_base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with due_date=due_date invoice_amount=invoice_amount invoice_number=invoice_number %}
+        Hi {{ first_name }},<br>
+        This is a friendly reminder that your next payment for the Data Science Cohort is due on {{ due_date }}.<br>
+        Invoice details:<br>
+        - Amount: ${{ invoice_amount }}<br>
+        - Invoice Number: {{ invoice_number }}
+    {% endblocktrans %}</p>
+    
+{% endblock content %}

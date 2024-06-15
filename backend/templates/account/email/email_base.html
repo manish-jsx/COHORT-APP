@@ -1,0 +1,71 @@
+{% load i18n static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Data Science Cohort{% endblock %}</title>
+    <style>
+        /* Basic Reset */
+        body { margin: 0; padding: 0; font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; }
+        a { color: #007bff; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Email Container */
+        .email-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd; /* Add a subtle border */
+        }
+
+        /* Header */
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        /* Content */
+        .content {
+            padding: 20px;
+        }
+        .content h2{
+            color: #007bff;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #f8f9fa;
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9em;
+            border-top: 1px solid #ddd;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .email-container {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <header class="header">
+            <h1>{% block head_title %}Data Science Cohort{% endblock %}</h1>
+        </header>
+        <div class="content">
+            {% block content %}{% endblock %}
+        </div>
+        <footer class="footer">
+            <p>&copy; {% now "Y" %} Your Company Name</p>
+        </footer>
+    </div>
+</body>
+</html>
+

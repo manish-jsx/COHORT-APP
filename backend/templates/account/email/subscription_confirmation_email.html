@@ -1,0 +1,19 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with user.first_name as first_name and subscription_plan as sub_plan and subscription_amount as sub_amount and subscription_renewal_date as renewal_date %}
+        Hi {{ first_name }},<br>
+        Thank you for subscribing to our Data Science Cohort!<br>
+        Your subscription details:<br>
+        <ul>
+        <li>Plan: {{ sub_plan }}</li>
+        <li>Amount: ${{ sub_amount }}</li>
+        <li>Renewal Date: {{ renewal_date }}</li>
+        </ul>
+        
+    {% endblocktrans %}</p>
+{% endblock content %}

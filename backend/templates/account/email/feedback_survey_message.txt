@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWe value your feedback! Please take a few minutes to complete our survey about your experience in the Data Science Cohort:\n{{ survey_link }}
+{% endblocktrans %}

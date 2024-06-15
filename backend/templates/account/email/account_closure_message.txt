@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWe're sorry to see you go. Your account on the Data Science Cohort has been successfully closed.\nIf you have any questions or feedback, please don't hesitate to contact us.
+{% endblocktrans %}

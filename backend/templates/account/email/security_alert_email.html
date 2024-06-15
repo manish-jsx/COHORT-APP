@@ -1,0 +1,17 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with user.first_name as first_name and password_reset_url as reset_url %}
+        Hi {{ first_name }},<br>
+        We noticed some unusual activity on your Data Science Cohort account. For your security, we've taken the following actions:
+        <ul>
+            <li><b>Changed your password:</b> To prevent unauthorized access.</li>
+            <li><b>Logged out all devices:</b> You'll need to log in again.</li>
+        </ul>
+        If you didn't initiate these actions, please reset your password immediately by clicking the following link:<br>
+        <a href="{{ reset_url }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">Reset Password</a>
+    {% endblocktrans %}</p>
+{% endblock content %}

@@ -1,0 +1,12 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+    <p>{% blocktrans with user.first_name as first_name %}
+        Hi {{ first_name }},<br>
+        How can we assist you today? Whether you have questions, need technical support, or want to provide feedback, our support team is here to help.<br>
+        Reach out to us via email at <a href="mailto:support@datasciencecohort.com">support@datasciencecohort.com</a> or visit our <a href="https://www.yourwebsite.com/helpdesk">Help Desk</a>.
+    {% endblocktrans %}</p>
+{% endblock content %}

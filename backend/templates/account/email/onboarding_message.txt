@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWelcome aboard! Let's get you started with our data science platform:\n- **Complete your profile:** Tell us a bit about yourself and your learning goals.\n- **Explore the curriculum:** Get familiar with the course structure and modules.\n- **Join the community:** Connect with fellow learners in our forums and discussions.\n- **Check your email regularly:** We'll send you important updates and announcements.
+{% endblocktrans %}

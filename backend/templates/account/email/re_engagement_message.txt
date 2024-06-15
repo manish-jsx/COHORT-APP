@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWe've noticed that you haven't been active on our Data Science Cohort platform recently.\nWe'd love to have you back! There's a lot of exciting content and learning opportunities waiting for you.\nTo make your return even more rewarding, we're offering you a special discount on our premium subscription. Use code REENGAGE at checkout to get 20% off!
+{% endblocktrans %}

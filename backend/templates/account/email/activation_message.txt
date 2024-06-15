@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hello {{ first_name }},\nPlease click on the following link to confirm your email address and activate your account:\n{{ activate_url }}
+{% endblocktrans %}

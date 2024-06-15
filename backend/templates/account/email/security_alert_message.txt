@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWe noticed some unusual activity on your Data Science Cohort account.\nFor your security, we've taken the following actions:\n- **Changed your password:** To prevent unauthorized access.\n- **Logged out all devices:** You'll need to log in again.\nIf you didn't initiate these actions, please reset your password immediately.
+{% endblocktrans %}

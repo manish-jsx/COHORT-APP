@@ -1,0 +1,15 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+    <p>{% blocktrans with user.first_name as first_name %}
+        Hi {{ first_name }},<br>
+        Welcome aboard! Let's get you started with our data science platform:<br>
+        - **Complete your profile:** Tell us a bit about yourself and your learning goals.<br>
+        - **Explore the curriculum:** Get familiar with the course structure and modules.<br>
+        - **Join the community:** Connect with fellow learners in our forums and discussions.<br>
+        - **Check your email regularly:** We'll send you important updates and announcements.
+    {% endblocktrans %}</p>
+{% endblock %}

@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWelcome to our immersive 30-day data science cohort! We're excited to have you join us on this learning journey.\n\nIn the coming weeks, you'll:\n- Master essential data science skills.\n- Gain hands-on experience with real-world projects.\n- Connect with a vibrant community of fellow learners and industry experts.\n- Receive personalized guidance and support from our instructors.\n\nGet ready to unlock your data science potential!
+{% endblocktrans %}

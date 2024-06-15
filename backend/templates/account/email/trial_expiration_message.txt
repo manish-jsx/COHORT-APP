@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nYour free trial for the Data Science Cohort is ending soon on {{ trial_end_date }}.\nUpgrade today to continue your learning journey and unlock all the benefits of our premium membership.
+{% endblocktrans %}

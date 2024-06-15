@@ -1,0 +1,15 @@
+{% extends "account/email/email_base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with user.first_name as first_name %}
+        Hi {{ first_name }},<br>
+        We value your feedback! Please take a few minutes to complete our survey about your experience in the Data Science Cohort:
+        <a href="{{ survey_link }}">{{ survey_link }}</a>
+    {% endblocktrans %}</p>
+
+{% endblock content %}

@@ -1,0 +1,19 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+<h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+<p>{% blocktrans with user.first_name as first_name %}
+    Hi {{ first_name }},<br>
+    We're excited to announce some amazing new features designed to enhance your learning experience:
+
+    <ul>
+        <li><b>New interactive exercises:</b> Practice your skills with our hands-on activities.</li>
+        <li><b>Enhanced progress tracking:</b> Keep tabs on your learning journey and see your achievements.</li>
+        <li><b>Live Q&A sessions with instructors:</b> Get your questions answered in real time.</li>
+        <li><b>Personalized learning recommendations:</b> Discover new content tailored to your interests and needs.</li>
+    </ul>
+{% endblocktrans %}</p>
+{% endblock content %}

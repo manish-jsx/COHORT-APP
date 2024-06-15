@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nWe're excited to announce some amazing new features designed to enhance your learning experience:\n- **New interactive exercises:** Practice your skills with our hands-on activities.\n- **Enhanced progress tracking:** Keep tabs on your learning journey and see your achievements.\n- **Live Q&A sessions with instructors:** Get your questions answered in real time.\n- **Personalized learning recommendations:** Discover new content tailored to your interests and needs.
+{% endblocktrans %}

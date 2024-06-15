@@ -1,0 +1,14 @@
+{% extends "account/email/email_base.html" %}
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    {% blocktrans with trial_end_date as t_end_date and user.first_name as first_name  %}
+        Hi {{ first_name }},<br>
+        Your free trial for the Data Science Cohort is ending soon on {{ t_end_date }}.<br>
+        Don't miss out on the opportunity to continue your learning journey and unlock all the benefits of our premium membership. Upgrade today to access exclusive content, live Q&A sessions, and personalized guidance.
+{% endblocktrans %}
+
+{% endblock content %}

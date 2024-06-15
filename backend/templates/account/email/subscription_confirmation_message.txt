@@ -1,0 +1,4 @@
+{% load i18n %}
+{% blocktrans with user.first_name as first_name %}
+Hi {{ first_name }},\nThank you for subscribing to our Data Science Cohort!\nYour subscription details:\n- Plan: {{ subscription_plan }}\n- Amount: ${{ subscription_amount }}\n- Renewal Date: {{ subscription_renewal_date }}
+{% endblocktrans %}

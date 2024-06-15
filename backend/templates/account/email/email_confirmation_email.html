@@ -1,0 +1,24 @@
+{% extends "account/email/email_base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with user.first_name as first_name %}
+        Hi {{ first_name }},<br>
+        Thank you for signing up for our Data Science Cohort! 
+    {% endblocktrans %}</p>
+    
+    <p>{% blocktrans %}
+        Please confirm your email address by clicking on the following link:
+    {% endblocktrans %}</p>
+
+    <p style="text-align: center;">
+        <a href="{{ confirmation_url }}" style="display: inline-block; padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+            {% blocktrans %}Confirm Email Address{% endblocktrans %}
+        </a>
+    </p>
+
+{% endblock content %} 

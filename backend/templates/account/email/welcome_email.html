@@ -1,0 +1,22 @@
+{% extends "account/email/email_base.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+    <h2>{% blocktrans with user.first_name as first_name %}Dear {{ first_name }},{% endblocktrans %}</h2>
+
+    <p>{% blocktrans with user.first_name as first_name %}
+        Hi {{ first_name }},<br>
+        Welcome to our immersive 30-day data science cohort! We're excited to have you join us on this learning journey.
+        <br><br>
+        In the coming weeks, you'll:
+        <ul>
+            <li>Master essential data science skills.</li>
+            <li>Gain hands-on experience with real-world projects.</li>
+            <li>Connect with a vibrant community of fellow learners and industry experts.</li>
+            <li>Receive personalized guidance and support from our instructors.</li>
+        </ul>
+        Get ready to unlock your data science potential!
+    {% endblocktrans %}</p>
+{% endblock content %}
