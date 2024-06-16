@@ -1,6 +1,7 @@
 
 from pathlib import Path
 
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -9,10 +10,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-qh*lym1a4_!+9&=m&^c^w0!8#yut5muuco4z6$2bn-mdr833xp'
+
+SECRET_KEY = os.getenv('SECRET_KEY')
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+
+DEBUG = os.getenv('DEBUG', 'False') == 'True'
+
 
 ALLOWED_HOSTS = []
 
@@ -23,7 +28,6 @@ CSRF_TRUSTED_ORIGINS = ['http://localhost']
 INSTALLED_APPS = [
     'clearcache',
     'django.contrib.admin',
-
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -121,6 +125,12 @@ DATABASES = {
     }
 }
 
+# DATABASE_NAME = os.getenv('DATABASE_NAME')
+# DATABASE_USER = os.getenv('DATABASE_USER')
+# DATABASE_PASSWORD = os.getenv('DATABASE_PASSWORD')
+# DATABASE_HOST = os.getenv('DATABASE_HOST')
+# DATABASE_PORT = os.getenv('DATABASE_PORT')
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
@@ -181,8 +191,12 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'manish.jsx@gmail.com'
-EMAIL_HOST_PASSWORD = 'pkru hgut scyt kdei'  # We'll use the service account JSON key instead
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD') # We'll use the service account JSON key instead
+
+
+
+
 
 LOGGING = {
     'version': 1,

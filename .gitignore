@@ -1,4 +1,6 @@
 venv
+.venv
+.env
 *.sh
 # Node.js / React App
 node_modules/
